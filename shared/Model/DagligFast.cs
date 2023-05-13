@@ -29,7 +29,7 @@ public class DagligFast : Ordination
 
     public override double doegnDosis()
     {
-        double totalDosis = MorgenDosis.Antal + MiddagDosis.Antal + AftenDosis.Antal + NatDosis.Antal;
+        double totalDosis = MorgenDosis.antal + MiddagDosis.antal + AftenDosis.antal + NatDosis.antal;
         return totalDosis;
     }
 

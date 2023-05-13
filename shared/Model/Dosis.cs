@@ -5,7 +5,6 @@ public class Dosis
     public int DosisId { get; set; }
     public DateTime tid { get; set; }
     public double antal { get; set; }
-    public int Antal { get; internal set; }
 
     public Dosis(DateTime tid, double antal)
     {

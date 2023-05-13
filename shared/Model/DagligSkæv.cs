@@ -32,7 +32,7 @@ public class DagligSkæv : Ordination
         double totalDosis = 0;
         foreach (Dosis dosis in doser)
         {
-            totalDosis += dosis.Antal;
+            totalDosis += dosis.antal;
         }
         return totalDosis;
     }
