@@ -4,8 +4,12 @@ public class Dato {
     public int DatoId { get; set; }
     public DateTime dato { get; set; }
 
-    internal bool erIndenfor(DateTime startDen, DateTime slutDen)
+    internal bool erIndenfor(DateTime startDen, DateTime slutDen, DateTime givesDen)
     {
-        throw new NotImplementedException();
+        if (startDen <= givesDen && givesDen <= slutDen)
+        {
+            return true;
+        }
+        return false;
     }
 }
