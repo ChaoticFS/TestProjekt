@@ -21,12 +21,12 @@ public class PN : Ordination
     /// </summary>
     public bool givDosis(Dato givesDen)
     {
-        if (!givesDen.erIndenfor(startDen, slutDen))
+        if (givesDen.erIndenfor(startDen, slutDen, givesDen.dato))
         {
-            return false;
+            dates.Add(givesDen);
+            return true;
         }
-        dates.Add(givesDen);
-        return true;
+        return false;
     }
 
     public override double doegnDosis()
@@ -36,7 +36,7 @@ public class PN : Ordination
 
     public override double samletDosis()
     {
-        return dates.Count() * antalEnheder;
+        return dates.Count * antalEnheder;
     }
 
     public int getAntalGangeGivet()

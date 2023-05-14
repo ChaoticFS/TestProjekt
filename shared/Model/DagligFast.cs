@@ -24,7 +24,7 @@ public class DagligFast : Ordination
     public override double samletDosis()
     {
 
-        return base.antalDage() * doegnDosis();
+        return antalDage() * doegnDosis();
     }
 
     public override double doegnDosis()
