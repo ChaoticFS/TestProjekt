@@ -14,8 +14,8 @@ public class Dosis
 
     public Dosis()
     {
-        this.tid = new DateTime();
-        this.antal = 0;
+        tid = new DateTime();
+        antal = 0;
     }
 
     public override String ToString()
