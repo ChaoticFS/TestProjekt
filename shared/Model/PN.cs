@@ -21,7 +21,7 @@ public class PN : Ordination
     /// </summary>
     public bool givDosis(Dato givesDen)
     {
-        if (givesDen.erIndenfor(startDen, slutDen, givesDen.dato))
+        if (givesDen.erIndenfor(startDen, slutDen))
         {
             dates.Add(givesDen);
             return true;

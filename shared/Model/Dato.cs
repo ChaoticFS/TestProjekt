@@ -4,9 +4,10 @@ public class Dato {
     public int DatoId { get; set; }
     public DateTime dato { get; set; }
 
-    internal bool erIndenfor(DateTime startDen, DateTime slutDen, DateTime givesDen)
+    // tjekker om datoen er indenfor den givne tidsramme
+    internal bool erIndenfor(DateTime startDen, DateTime slutDen)
     {
-        if (startDen <= givesDen && givesDen <= slutDen)
+        if (startDen <= dato && dato <= slutDen)
         {
             return true;
         }
