@@ -131,6 +131,11 @@ public class DataService
     }
 
     public PN OpretPN(int patientId, int laegemiddelId, double antal, DateTime startDato, DateTime slutDato) {
+        if (startDato > slutDato)
+        {
+            throw new InvalidDataException("Startdato skal være efter slutdato");
+        }
+
         Laegemiddel lm = db.Laegemiddler.Find(laegemiddelId);
 
         // starter med at lave ordinationen så den kan tilføjes som en relation til patienten
@@ -147,6 +152,10 @@ public class DataService
     public DagligFast OpretDagligFast(int patientId, int laegemiddelId, 
         double antalMorgen, double antalMiddag, double antalAften, double antalNat, 
         DateTime startDato, DateTime slutDato) {
+        if (startDato > slutDato)
+        {
+            throw new InvalidDataException("Startdato skal være efter slutdato");
+        }
 
         // starter med at lave ordinationen så den kan tilføjes som en relation til patienten
         Laegemiddel lm = db.Laegemiddler.Find(laegemiddelId);
@@ -161,7 +170,11 @@ public class DataService
     }
 
     public DagligSkæv OpretDagligSkaev(int patientId, int laegemiddelId, Dosis[] doser, DateTime startDato, DateTime slutDato) {
-        
+        if (startDato > slutDato)
+        {
+            throw new InvalidDataException("Startdato skal være efter slutdato");
+        }
+
         // starter med at lave ordinationen så den kan tilføjes som en relation til patienten
         Laegemiddel lm = db.Laegemiddler.Find(laegemiddelId);
         DagligSkæv ds = new(startDato, slutDato, lm, doser);
