@@ -5,15 +5,25 @@ using shared.Model;
 [TestClass]
 public class PatientTest
 {
+    string cpr;
+    string navn;
+    double vægt;
+
+    Patient patient;
+
+    [TestInitialize]
+    public void InitTest()
+    {
+        cpr = "160563-1234";
+        navn = "John";
+        vægt = 83;
+
+        patient = new Patient(cpr, navn, vægt);
+    }
 
     [TestMethod]
     public void PatientHasName()
     {
-        string cpr = "160563-1234";
-        string navn = "John";
-        double vægt = 83;
-        
-        Patient patient = new Patient(cpr, navn, vægt);
         Assert.AreEqual(navn, patient.navn);
     }
 
@@ -21,11 +31,6 @@ public class PatientTest
     [TestMethod]
     public void TestDerAltidFejler()
     {
-        string cpr = "160563-1234";
-        string navn = "John";
-        double vægt = 83;
-
-        Patient patient = new Patient(cpr, navn, vægt);
         Assert.AreEqual("Egon", patient.navn);
     }
 }
