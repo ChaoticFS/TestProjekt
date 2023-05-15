@@ -31,7 +31,37 @@ public class PN : Ordination
 
     public override double doegnDosis()
     {
-        return antalEnheder;
+        //laver bare en homebrewet min/max function herinde fordi den esoteric dato model smadrer built in datetime funktioner
+        if (dates.Count == 1)
+        {
+            return antalEnheder;
+        }
+        else if (dates.Count == 0)
+        {
+            return 0;
+        }
+
+        DateTime min = dates[0].dato;
+        DateTime max = dates[0].dato;
+
+        foreach (var date in dates.Skip(1))
+        {
+            if (date.dato < min)
+            {
+                min = date.dato;
+            }
+
+            if (date.dato > max) 
+            {  
+                max = date.dato; 
+            }
+        }
+
+        double result = dates.Count * antalEnheder;
+
+        result /= (max - min).TotalDays + 1;
+
+        return result;
     }
 
     public override double samletDosis()
