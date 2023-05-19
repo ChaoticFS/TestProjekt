@@ -139,7 +139,7 @@ public class DataService
         Laegemiddel lm = db.Laegemiddler.Find(laegemiddelId);
 
         // starter med at lave ordinationen så den kan tilføjes som en relation til patienten
-        PN pn = new (startDato, slutDato, antal, lm);
+        PN pn = new (startDato.Date, slutDato, antal, lm);
         db.PNs.Add(pn);
 
         Patient pt = db.Patienter.Find(patientId);

@@ -42,15 +42,12 @@ public class ServiceTest
     }
 
     [TestMethod]
-    [ExpectedException(typeof(ArgumentNullException))]
+    [ExpectedException(typeof(InvalidDataException))]
     public void TestAtKodenSmiderEnException()
     {
-        // Herunder skal man så kalde noget kode,
-        // der smider en exception.
+        DateTime start = DateTime.Now;
+        DateTime end = DateTime.Now.AddDays(-1);
 
-        // Hvis koden _ikke_ smider en exception,
-        // så fejler testen.
-
-        Console.WriteLine("Her kommer der ikke en exception. Testen fejler.");
+        service.OpretDagligFast(1, 1, 1, 1, 1, 1, start, end);
     }
 }

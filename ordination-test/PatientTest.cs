@@ -27,10 +27,9 @@ public class PatientTest
         Assert.AreEqual(navn, patient.navn);
     }
 
-
     [TestMethod]
-    public void TestDerAltidFejler()
+    public void TestForkertNavn()
     {
-        Assert.AreEqual("Egon", patient.navn);
+        Assert.AreNotEqual("Egon", patient.navn);
     }
 }

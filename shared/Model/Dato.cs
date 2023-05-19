@@ -5,7 +5,7 @@ public class Dato {
     public DateTime dato { get; set; }
 
     // tjekker om datoen er indenfor den givne tidsramme
-    internal bool erIndenfor(DateTime startDen, DateTime slutDen)
+    public bool erIndenfor(DateTime startDen, DateTime slutDen)
     {
         if (startDen <= dato && dato <= slutDen)
         {
